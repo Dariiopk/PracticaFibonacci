@@ -2,15 +2,15 @@ package org.example.fibonacci;
 
 public class Fibonacci {
 
-    public static int fibonacci(int n)
+    public static int fibonacci(int value)
     {
-        if (n>1){
-            return fibonacci(n-1) + fibonacci(n-2);  //función recursiva
+        if (value>1){
+            return fibonacci(value-1) + fibonacci(value-2);  //función recursiva
         }
-        else if (n==1) {  // caso base
+        else if (value==1) {  // caso base
             return 1;
         }
-        else if (n==0){  // caso base
+        else if (value==0){  // caso base
             return 0;
         }
         else{ //error
