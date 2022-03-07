@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 /*
 * Test cases:
@@ -12,6 +13,8 @@ import static org.junit.Assert.assertEquals;
 * Fibonacci 2 -> 1
 * Fibonacci 3 -> 2
 * Fibonacci 4 -> 3
+* Fibonacci 25 -> 75025
+* Fibonacci -1 -> Error
 * */
 
 public class FibonacciTest {
@@ -54,5 +57,19 @@ public class FibonacciTest {
         int expectedValue = 3;
         int obtainedValue = fibonacci.fibonacci(4);
         assertEquals(expectedValue, obtainedValue);
+    }
+
+    @Test
+    public void shouldReturn75025IfNumberTheIs25 (){
+        Fibonacci fibonacci = new Fibonacci();
+        int expectedValue = 75025;
+        int obtainedValue = fibonacci.fibonacci(25);
+        assertEquals(expectedValue, obtainedValue);
+    }
+
+    @Test
+    public void shouldReturnErrorfNumberTheIsNegative (){
+        var fibonacci = new Fibonacci();
+        assertThrows(RuntimeException.class, () -> fibonacci.fibonacci(-1));
     }
 }

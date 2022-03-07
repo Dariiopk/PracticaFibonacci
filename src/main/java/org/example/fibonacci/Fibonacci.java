@@ -4,18 +4,19 @@ public class Fibonacci {
 
     public static int fibonacci(int value)
     {
+        int n = 0;
         if (value>1){
-            return fibonacci(value-1) + fibonacci(value-2);  //función recursiva
+            n = fibonacci(value-1) + fibonacci(value-2);  //función recursiva
         }
         else if (value==1) {  // caso base
-            return 1;
+            n = 1;
         }
         else if (value==0){  // caso base
-            return 0;
+            n = 0;
         }
         else{ //error
-            System.out.println("Debes ingresar un tamaño mayor o igual a 1");
-            return -1;
+           throw new RuntimeException("Debes ingresar un tamaño mayor o igual a 1");
         }
+        return n;
     }
 }
