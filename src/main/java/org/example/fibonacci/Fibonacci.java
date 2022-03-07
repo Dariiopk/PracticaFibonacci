@@ -2,20 +2,21 @@ package org.example.fibonacci;
 
 public class Fibonacci {
 
-    public static int fibonacci(int n)
+    public static int fibonacci(int value)
     {
-        if (n>1){
-            return fibonacci(n-1) + fibonacci(n-2);  //función recursiva
+        int n = 0;
+        if (value>1){
+            n = fibonacci(value-1) + fibonacci(value-2);  //función recursiva
         }
-        else if (n==1) {  // caso base
-            return 1;
+        else if (value==1) {  // caso base
+            n = 1;
         }
-        else if (n==0){  // caso base
-            return 0;
+        else if (value==0){  // caso base
+            n = 0;
         }
         else{ //error
-            System.out.println("Debes ingresar un tamaño mayor o igual a 1");
-            return -1;
+           throw new RuntimeException("Debes ingresar un tamaño mayor o igual a 1");
         }
+        return n;
     }
 }
